@@ -1,0 +1,12 @@
+schema_version: 1
+module_path: root_utilities
+title: 电商下单入口与限流校验服务
+scope:
+    - consumer.go
+    - validate.go
+    - getOne.go
+source_files: []
+depends_on: []
+related_to:
+    - path: repositories
+    - path: services

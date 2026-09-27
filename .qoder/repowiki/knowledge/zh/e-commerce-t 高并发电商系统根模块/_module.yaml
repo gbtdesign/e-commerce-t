@@ -1,0 +1,11 @@
+schema_version: 1
+module_path: ""
+title: e-commerce-t 高并发电商系统根模块
+scope:
+    - README.md
+    - .gitignore
+    - imooc
+    - info
+source_files: []
+depends_on: []
+related_to: []

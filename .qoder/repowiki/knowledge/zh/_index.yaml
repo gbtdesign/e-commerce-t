@@ -1,0 +1,109 @@
+# 知识卡导出索引文件
+schema_version: 1
+locale: zh-CN
+branch: main
+nodes_managed: true
+exported_at: "2026-09-27T02:15:58Z"
+modules:
+    "":
+        dir_name: e-commerce-t 高并发电商系统根模块
+        title: e-commerce-t 高并发电商系统根模块
+        scope:
+            - README.md
+            - .gitignore
+            - imooc
+            - info
+        source_files: []
+        children:
+            - backend_admin_web
+            - common_lib
+            - datamodels
+            - frontend_shop_web
+            - repositories
+            - root_utilities
+            - services
+        depends_on: []
+        related_to: []
+    backend_admin_web:
+        dir_name: 后台管理 Web 服务（Iris MVC）
+        title: 后台管理 Web 服务（Iris MVC）
+        scope:
+            - backend/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: common_lib
+            - path: services
+    common_lib:
+        dir_name: 通用工具与基础设施库
+        title: 通用工具与基础设施库
+        scope:
+            - common/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: backend_admin_web
+            - path: frontend_shop_web
+    datamodels:
+        dir_name: 电商领域数据模型定义
+        title: 电商领域数据模型定义
+        scope:
+            - datamodels/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: repositories
+            - path: services
+    frontend_shop_web:
+        dir_name: 前端 Web 服务（Iris MVC 站点）
+        title: 前端 Web 服务（Iris MVC 站点）
+        scope:
+            - fronted/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: common_lib
+            - path: services
+    repositories:
+        dir_name: 领域数据访问层（用户_商品_订单 Repository）
+        title: 领域数据访问层（用户/商品/订单 Repository）
+        scope:
+            - repositories/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: datamodels
+            - path: root_utilities
+            - path: services
+    root_utilities:
+        dir_name: 电商下单入口与限流校验服务
+        title: 电商下单入口与限流校验服务
+        scope:
+            - consumer.go
+            - validate.go
+            - getOne.go
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: repositories
+            - path: services
+    services:
+        dir_name: 业务服务层（用户_商品_订单）
+        title: 业务服务层（用户/商品/订单）
+        scope:
+            - services/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: backend_admin_web
+            - path: datamodels
+            - path: frontend_shop_web
+            - path: repositories
+            - path: root_utilities

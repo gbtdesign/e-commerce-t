@@ -1,0 +1,11 @@
+schema_version: 1
+module_path: repositories
+title: 领域数据访问层（用户/商品/订单 Repository）
+scope:
+    - repositories/
+source_files: []
+depends_on: []
+related_to:
+    - path: datamodels
+    - path: root_utilities
+    - path: services
