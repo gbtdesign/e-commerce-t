@@ -145,10 +145,10 @@ func GetCurl(hostUrl string,request *http.Request)(response *http.Response,body 
 
 	//获取返回结果
 	response,err =client.Do(req)
-	defer response.Body.Close()
 	if err !=nil {
 		return
 	}
+	defer response.Body.Close()
 	body,err =ioutil.ReadAll(response.Body)
 	return
 }

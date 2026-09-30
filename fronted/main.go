@@ -2,8 +2,8 @@ package main
 
 import (
 
-	"github.com/kataras/iris"
-	"github.com/kataras/iris/mvc"
+	"github.com/kataras/iris/v12"
+	"github.com/kataras/iris/v12/mvc"
 	"imooc-product/common"
 	"imooc-product/fronted/middleware"
 	"imooc-product/fronted/web/controllers"
@@ -22,9 +22,9 @@ func main() {
 	tmplate := iris.HTML("./fronted/web/views", ".html").Layout("shared/layout.html").Reload(true)
 	app.RegisterView(tmplate)
 	//4.设置模板
-	app.StaticWeb("/public", "./fronted/web/public")
+	app.HandleDir("/public", "./fronted/web/public")
 	//访问生成好的html静态文件
-	app.StaticWeb("/html", "./fronted/web/htmlProductShow")
+	app.HandleDir("/html", "./fronted/web/htmlProductShow")
 	//出现异常跳转到指定页面
 	app.OnAnyErrorCode(func(ctx iris.Context) {
 		ctx.ViewData("message", ctx.Values().GetStringDefault("message", "访问的页面出错！"))
@@ -60,7 +60,6 @@ func main() {
 
 	app.Run(
 		iris.Addr("0.0.0.0:8082"),
-		iris.WithoutVersionChecker,
 		iris.WithoutServerError(iris.ErrServerClosed),
 		iris.WithOptimizations,
 	)

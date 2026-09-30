@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"github.com/kataras/iris"
-	"github.com/kataras/iris/mvc"
-	"github.com/kataras/iris/sessions"
+	"github.com/kataras/iris/v12"
+	"github.com/kataras/iris/v12/mvc"
+	"github.com/kataras/iris/v12/sessions"
 	"imooc-product/datamodels"
 	"imooc-product/services"
 	"strconv"

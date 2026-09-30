@@ -2,7 +2,7 @@ package repositories
 
 import (
 	"database/sql"
-	"github.com/kataras/iris/core/errors"
+	"errors"
 	"imooc-product/common"
 	"imooc-product/datamodels"
 	"strconv"
