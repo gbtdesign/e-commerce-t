@@ -3,11 +3,11 @@ schema_version: 1
 locale: zh-CN
 branch: main
 nodes_managed: true
-exported_at: "2026-09-27T02:15:58Z"
+exported_at: "2026-09-30T12:42:31Z"
 modules:
     "":
-        dir_name: e-commerce-t 高并发电商系统根模块
-        title: e-commerce-t 高并发电商系统根模块
+        dir_name: 高并发电商系统（Iris MVC 多服务聚合）
+        title: 高并发电商系统（Iris MVC 多服务聚合）
         scope:
             - README.md
             - .gitignore
@@ -33,7 +33,6 @@ modules:
         children: []
         depends_on: []
         related_to:
-            - path: common_lib
             - path: services
     common_lib:
         dir_name: 通用工具与基础设施库
@@ -43,9 +42,7 @@ modules:
         source_files: []
         children: []
         depends_on: []
-        related_to:
-            - path: backend_admin_web
-            - path: frontend_shop_web
+        related_to: []
     datamodels:
         dir_name: 电商领域数据模型定义
         title: 电商领域数据模型定义
@@ -55,8 +52,7 @@ modules:
         children: []
         depends_on: []
         related_to:
-            - path: repositories
-            - path: services
+            - path: root_utilities
     frontend_shop_web:
         dir_name: 前端 Web 服务（Iris MVC 站点）
         title: 前端 Web 服务（Iris MVC 站点）
@@ -66,7 +62,7 @@ modules:
         children: []
         depends_on: []
         related_to:
-            - path: common_lib
+            - path: root_utilities
             - path: services
     repositories:
         dir_name: 领域数据访问层（用户_商品_订单 Repository）
@@ -77,12 +73,10 @@ modules:
         children: []
         depends_on: []
         related_to:
-            - path: datamodels
             - path: root_utilities
-            - path: services
     root_utilities:
-        dir_name: 电商下单入口与限流校验服务
-        title: 电商下单入口与限流校验服务
+        dir_name: 下单链路前置验证与异步消费入口
+        title: 下单链路前置验证与异步消费入口
         scope:
             - consumer.go
             - validate.go
@@ -91,8 +85,9 @@ modules:
         children: []
         depends_on: []
         related_to:
+            - path: datamodels
+            - path: frontend_shop_web
             - path: repositories
-            - path: services
     services:
         dir_name: 业务服务层（用户_商品_订单）
         title: 业务服务层（用户/商品/订单）
@@ -103,7 +98,4 @@ modules:
         depends_on: []
         related_to:
             - path: backend_admin_web
-            - path: datamodels
             - path: frontend_shop_web
-            - path: repositories
-            - path: root_utilities

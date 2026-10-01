@@ -1,6 +1,6 @@
 schema_version: 1
 module_path: ""
-title: e-commerce-t 高并发电商系统根模块
+title: 高并发电商系统（Iris MVC 多服务聚合）
 scope:
     - README.md
     - .gitignore

@@ -5,6 +5,4 @@ scope:
     - common/
 source_files: []
 depends_on: []
-related_to:
-    - path: backend_admin_web
-    - path: frontend_shop_web
+related_to: []

@@ -1,6 +1,6 @@
 schema_version: 1
 module_path: root_utilities
-title: 电商下单入口与限流校验服务
+title: 下单链路前置验证与异步消费入口
 scope:
     - consumer.go
     - validate.go
@@ -8,5 +8,6 @@ scope:
 source_files: []
 depends_on: []
 related_to:
+    - path: datamodels
+    - path: frontend_shop_web
     - path: repositories
-    - path: services

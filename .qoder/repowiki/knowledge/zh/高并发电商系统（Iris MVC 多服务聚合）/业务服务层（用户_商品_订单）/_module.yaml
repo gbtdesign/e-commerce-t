@@ -7,7 +7,4 @@ source_files: []
 depends_on: []
 related_to:
     - path: backend_admin_web
-    - path: datamodels
     - path: frontend_shop_web
-    - path: repositories
-    - path: root_utilities
